@@ -1,9 +1,8 @@
 # Instance-dependent bandit learning in games
 
 This is the code repository for the preprint
-*Instance-dependent regret bounds for learning
-two-player zero-sum games with bandit feedback*, authored
-by Shinji Ito, Haipeng Luo, Taira Tsuchiya, and Yue Wu.
+[Instance-dependent regret bounds for learning two-player zero-sum games with bandit feedback](https://arxiv.org/abs/2502.17625),
+authored by Shinji Ito, Haipeng Luo, Taira Tsuchiya, and Yue Wu.
 
 ## Structure
 
@@ -17,15 +16,16 @@ The algorithms are implemented in `onlineax/` as a Python
 module.
 
 ## Dependencies
+
 The `env.yml` specifies the conda environment used in our
 experiments. Use the following command to install it:
 
 ```bash
-conda env create -f env.yml
+conda env create -f env.yml --prefix ./venv
 # or:
-mamba env create -f env.yml
-# or:
-micromamba env create -f env.yml
+mamba env create -f env.yml --prefix ./venv
+# or (preferred, tested):
+micromamba env create -f env.yml --prefix ./venv
 ```
 
 The code should run on a clean install of the environment.
@@ -34,5 +34,5 @@ The code should run on a clean install of the environment.
 
 The code runs on a x64 Linux machine with 64 CPU cores and 
 128GB of memory. Due to the usage of `jax.random`, the 
-pseudo-random number generator (PRNG) is seeded completely
+pseudo-random number generator (PRNG) is completely
 deterministic.
